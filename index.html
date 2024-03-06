@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black & Orange Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="myForm">
+    <h1>Flames Entry from Here</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="slogan">Slogan:</label>
+    <input type="text" id="slogan" name="slogan" required>
+    <button type="submit" disabled>Submit (to Google Form)</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const submitButton = form.querySelector('button');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+      submitButton.removeAttribute('disabled'); // Enable submit button on form submit
+
+      // Replace 'YOUR_GOOGLE_FORM_LINK' with the actual link to your Google Form
+      window.location.href = 'YOUR_GOOGLE_FORM_LINK';
+    });
+  </script>
+</body>
+</html>
